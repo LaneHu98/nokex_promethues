@@ -18,6 +18,15 @@ rule_files:
 scrape_configs:
   - job_name: 'limbo-services'
     metrics_path: '/actuator/prometheus'
+    relabel_configs:
+      - source_labels: [__address__]
+        regex: '(.*):\d+'
+        target_label: __tmp_ip
+      - source_labels: [service, __tmp_ip]
+        separator: ''
+        regex: '(.*)(.*)'
+        target_label: instance
+        replacement: '${1}@${2}'
     static_configs:
       - targets:
           - '172.31.6.111:8081'
