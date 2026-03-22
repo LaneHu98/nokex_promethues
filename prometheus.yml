@@ -29,16 +29,16 @@ scrape_configs:
         replacement: '${1}@${2}'
     static_configs:
       - targets:
-          - '172.31.6.111:8081'
-          - '172.31.0.172:8081'
+          - '172.31.6.111:6092'
+          - '172.31.0.172:6092'
         labels:
           service: 'limbo-exchange-web-service'
       - targets:
-          - '172.31.0.172:8081'
+          - '172.31.0.172:6003'
         labels:
           service: 'limbo-exchange-service'
       - targets:
-          - '172.31.6.111:8081'
+          - '172.31.6.111:6004'
         labels:
           service: 'limbo-market-service'
       - targets:
@@ -49,54 +49,54 @@ scrape_configs:
         labels:
           service: 'limbo-api-gateway'
       - targets:
-          - '172.31.6.83:8081'
-          - '172.31.7.248:8081'
+          - '172.31.6.83:6006'
+          - '172.31.7.248:6006'
         labels:
           service: 'limbo-p2p-service'
       - targets:
-          - '172.31.6.83:8081'
-          - '172.31.7.248:8081'
-          - '172.31.0.149:8081'
-          - '172.31.7.109:8081'
+          - '172.31.6.83:6001'
+          - '172.31.7.248:6001'
+          - '172.31.0.149:6001'
+          - '172.31.7.109:6001'
         labels:
           service: 'limbo-user-service'
       - targets:
-          - '172.31.0.149:8081'
-          - '172.31.7.109:8081'
+          - '172.31.0.149:6002'
+          - '172.31.7.109:6002'
         labels:
           service: 'limbo-active-service'
       - targets:
-          - '172.31.0.149:8081'
-          - '172.31.7.109:8081'
+          - '172.31.0.149:5001'
+          - '172.31.7.109:5001'
         labels:
           service: 'limbo-agent-service'
       - targets:
-          - '172.31.0.172:8081'
+          - '172.31.0.172:6024'
         labels:
           service: 'limbo-mmcorporate-service'
       - targets:
-          - '172.31.6.111:8081'
+          - '172.31.6.111:6089'
         labels:
           service: 'limbo-future-admin-service'
       - targets:
-          - '172.31.6.111:8081'
+          - '172.31.6.111:6078'
         labels:
           service: 'limbo-future-rebate-service'
       - targets:
-          - '172.31.6.111:8081'
+          - '172.31.6.111:6008'
         labels:
           service: 'limbo-financial-service'
       - targets:
-          - '172.31.6.111:8081'
+          - '172.31.6.111:6012'
         labels:
           service: 'limbo-option-service'
       - targets:
-          - '172.31.6.111:8081'
-          - '172.31.6.206:8081'
-          - '172.31.0.218:8081'
+          - '172.31.6.111:20000'
+          - '172.31.6.206:20000'
+          - '172.31.0.218:20000'
         labels:
           service: 'limbo-robot-normal-service'
       - targets:
-          - '172.31.3.161:8081'
+          - '172.31.3.161:6010'
         labels:
           service: 'limbo-admin-service'
