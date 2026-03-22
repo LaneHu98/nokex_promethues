@@ -20,13 +20,15 @@ scrape_configs:
     metrics_path: '/actuator/prometheus'
     relabel_configs:
       - source_labels: [__address__]
-        regex: '(.*):\d+'
-        target_label: __tmp_ip
-      - source_labels: [service, __tmp_ip]
+        regex: '([^:]+):\d+'
+        target_label: __instance_ip
+      - source_labels: [service, __instance_ip]
         separator: ''
-        regex: '(.*)(.*)'
+        regex: '^(.*)$'
         target_label: instance
         replacement: '${1}@${2}'
+      - source_labels: [service]
+        target_label: application
     static_configs:
       - targets:
           - '172.31.6.111:6092'
